@@ -1,0 +1,5 @@
+type: brew
+nofile-limits: true # increase nofile limits
+brew-analytics: false # disable telemetry
+update-interval: 1d
+upgrade-interval: 1d

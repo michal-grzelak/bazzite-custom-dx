@@ -15,5 +15,8 @@ modules:
   # install all qemu modules
   - from-file: dx/qemu.yml
 
+  # install brew
+  - from-file: dx/brew.yml
+
   # setup services
   - from-file: dx/system-services.yml
