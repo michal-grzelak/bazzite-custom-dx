@@ -1,0 +1,16 @@
+modules:
+  # preconfigure before install
+  - type: script
+    scripts: preconfigure-dx.sh
+
+  # install all common modules
+  - from-file: dx/common.yml
+
+  # install all cockpit modules
+  - from-file: dx/cockpit.yml
+
+  # install all docker modules
+  - from-file: dx/docker.yml
+
+  # install all qemu modules
+  - from-file: dx/qemu.yml

@@ -1,0 +1,14 @@
+modules:
+  - type: rpm-ostree
+    install:
+      - cockpit-machines
+      - cockpit-networkmanager
+      - cockpit-ostree
+      - cockpit-pcp
+      - cockpit-podman
+      - cockpit-selinux
+      - cockpit-storaged
+      - cockpit-system
+      - cockpit-kdump
+      - cockpit-bridge
+      - cockpit-navigator

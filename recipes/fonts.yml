@@ -1,0 +1,7 @@
+modules:
+  - type: fonts
+    fonts:
+      - FiraCode
+      - SourceCodePro
+      - Hack
+      - Terminus
