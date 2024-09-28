@@ -12,8 +12,9 @@ image-version: stable
 modules:
   # copy configuration files
   - type: files
-  - source: system
-    destination: /
+    files:
+      - source: system
+        destination: /
 
   # install dev fonts
   - from-file: fonts.yml

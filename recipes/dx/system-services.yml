@@ -1,0 +1,8 @@
+modules:
+  - type: systemd
+    system:
+      enabled:
+        - docker.socket
+        - podman.socket
+        - libvirt-workaround.service
+        - dx-groups.service

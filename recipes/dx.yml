@@ -14,3 +14,6 @@ modules:
 
   # install all qemu modules
   - from-file: dx/qemu.yml
+
+  # setup services
+  - from-file: dx/system-services.yml
