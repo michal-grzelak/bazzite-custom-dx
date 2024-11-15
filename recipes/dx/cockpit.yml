@@ -4,7 +4,6 @@ modules:
       - cockpit-machines
       - cockpit-networkmanager
       - cockpit-ostree
-      - cockpit-pcp
       - cockpit-podman
       - cockpit-selinux
       - cockpit-storaged
