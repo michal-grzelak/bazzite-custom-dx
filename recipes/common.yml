@@ -1,6 +1,8 @@
 modules:
   - type: rpm-ostree
     install:
-      - 1password
-      - 1password-cli
       - code
+
+  - type: bling
+    install:
+      - 1password # install 1Password (stable) and `op` CLI tool
