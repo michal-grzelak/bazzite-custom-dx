@@ -12,4 +12,4 @@ modules:
       - cockpit-system
       - cockpit-kdump
       - cockpit-bridge
-      - cockpit-navigator
+      - cockpit-files
