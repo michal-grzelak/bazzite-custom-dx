@@ -6,5 +6,5 @@ modules:
   # All GPU-agnostic DX modules
   - from-file: dx.yml
   
-  # AI: LM Studio AMD/Intel GPU support (clblast)
-  - from-file: ai/lmstudio-amd.yml
+  # AI: OpenCL BLAS for AMD/Intel GPU acceleration
+  - from-file: ai/clblast.yml

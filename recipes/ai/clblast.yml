@@ -1,11 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+# OpenCL BLAS library for AMD/Intel GPU acceleration
+# Provides GPU-accelerated matrix operations for LLMs (e.g., LMStudio)
 modules:
-  # Install VSCode from Microsoft repository
   - type: dnf
-    repos:
-      files:
-        - vscode.repo
     install:
       packages:
-        - code
+        - clblast
