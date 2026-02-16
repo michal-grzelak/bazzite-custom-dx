@@ -1,12 +1,10 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
-# NOTE: networking.yml must run before this module to enable IP forwarding
 modules:
   - type: dnf
     repos:
       files:
-        - url: https://download.docker.com/linux/fedora/docker-ce.repo
-          name: docker-ce
+        - https://download.docker.com/linux/fedora/docker-ce.repo
     install:
       packages:
         - docker-ce
@@ -15,5 +13,17 @@ modules:
         - docker-buildx-plugin
         - docker-compose-plugin
         - docker-model-plugin
-    # TEMPORARY OVERRIDE: Disable repo after install to avoid conflicts
-    # This pattern follows Aurora DX for security isolation
+
+  # Copy docker group setup script
+  - type: files
+    files:
+      - source: usr/libexec/dx-docker-groups
+        destination: /usr/libexec/dx-docker-groups
+        mode: "0755"
+
+  # Enable docker socket and group service
+  - type: systemd
+    system:
+      enabled:
+        - docker.socket
+        - dx-docker-groups.service

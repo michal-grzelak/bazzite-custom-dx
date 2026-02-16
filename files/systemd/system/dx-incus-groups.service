@@ -1,9 +1,9 @@
 [Unit]
-Description=Add wheel members to docker, libvirt, and incus-admin groups
+Description=Add wheel members to incus-admin group
 
 [Service]
 Type=oneshot
-ExecStart=/usr/libexec/dx-groups
+ExecStart=/usr/libexec/dx-incus-groups
 Restart=on-failure
 RestartSec=30
 StartLimitInterval=0

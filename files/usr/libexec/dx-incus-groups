@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Incus-admin group setup - adds wheel members to incus-admin group
+
+VERSION="1"
+GROUP_NAME="incus-admin"
+STATE_FILE="/etc/ublue/dx-incus-groups"
+
+# Check if already ran with same version
+if [[ -f "$STATE_FILE" ]] && [[ "$(cat "$STATE_FILE")" == "$VERSION" ]]; then
+    echo "$GROUP_NAME group setup already completed (v$VERSION). Exiting..."
+    exit 0
+fi
+
+echo "Running $GROUP_NAME group setup..."
+
+# Function to add user to group
+add_to_group() {
+    local user="$1"
+    local group="$2"
+    
+    if id -nG "$user" | grep -qw "$group"; then
+        echo "User $user is already in group $group"
+        return
+    fi
+    
+    # Check if group exists in /usr/lib/group (Atomic standard)
+    if grep -q "^${group}:" /usr/lib/group 2>/dev/null; then
+        usermod -aG "$group" "$user" 2>/dev/null || echo "Warning: Could not add $user to $group"
+    else
+        # Fallback - try direct add
+        groupadd "$group" 2>/dev/null || true
+        usermod -aG "$group" "$user" 2>/dev/null || echo "Warning: Could not add $user to $group"
+    fi
+}
+
+# Get all wheel users
+wheel_users=$(getent group wheel | cut -d ":" -f 4 | tr ',' '\n')
+
+# Add wheel users to incus-admin group
+for user in $wheel_users; do
+    echo "Adding user $user to $GROUP_NAME group..."
+    add_to_group "$user" "$GROUP_NAME"
+done
+
+# Create state file
+echo "$VERSION" > "$STATE_FILE"
+
+echo "$GROUP_NAME group setup complete."

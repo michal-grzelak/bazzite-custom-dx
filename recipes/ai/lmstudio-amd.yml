@@ -8,7 +8,7 @@ modules:
     install:
       packages:
         - clblast
-  
+
   # Create symlinks for LM Studio library paths
   - type: script
     scripts:

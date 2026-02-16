@@ -1,15 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
-# TEMPORARY OVERRIDE: IP forwarding and iptables_nat setup
-# These workarounds may become unnecessary with future Fedora kernel updates
-
 modules:
-  # Enable IP forwarding for container networking
-  - type: sysctl
-    properties:
-      net.ipv4.ip_forward: 1
-      net.ipv6.conf.all.forwarding: 1
-  
   # Load iptable_nat module for docker-in-docker scenarios
   - type: files
     files:

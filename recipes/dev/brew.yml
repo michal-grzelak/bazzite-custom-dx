@@ -6,6 +6,3 @@ modules:
     brew-analytics: false
     update-interval: 1d
     upgrade-interval: 1d
-    install:
-      # Mise - version manager (runs after brew setup)
-      - mise

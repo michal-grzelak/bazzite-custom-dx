@@ -11,12 +11,6 @@ image-version: stable
 
 # module configuration, executed in order
 modules:
-  # copy configuration files (systemd services, tmpfiles, skel configs)
-  - type: files
-    files:
-      - source: system
-        destination: /
-
   # install dev fonts
   - from-file: fonts.yml
 

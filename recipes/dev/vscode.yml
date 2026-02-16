@@ -5,20 +5,13 @@ modules:
   - type: dnf
     repos:
       files:
-        - url: https://packages.microsoft.com/yumrepos/vscode/packages-microsoft-prod-x86_64.rpm
-          name: packages-microsoft-com-vscode
-          gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+        - vscode.repo
     install:
       packages:
         - code
-  
+
   # Copy VSCode settings to /etc/skel for new users
   - type: files
     files:
       - source: system/etc/skel/.config/Code/User/settings.json
         destination: /etc/skel/.config/Code/User/settings.json
-  
-  # Install @devcontainers/cli via npm (requires npm - provided by brew)
-  - type: script
-    scripts:
-      - install-devcontainer-cli.sh
