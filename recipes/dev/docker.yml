@@ -1,0 +1,19 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+# NOTE: networking.yml must run before this module to enable IP forwarding
+modules:
+  - type: dnf
+    repos:
+      files:
+        - url: https://download.docker.com/linux/fedora/docker-ce.repo
+          name: docker-ce
+    install:
+      packages:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-compose-plugin
+        - docker-model-plugin
+    # TEMPORARY OVERRIDE: Disable repo after install to avoid conflicts
+    # This pattern follows Aurora DX for security isolation

@@ -1,0 +1,12 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+# Note: Base podman is already included in Bazzite
+# This module adds additional podman tools and extensions
+modules:
+  - type: dnf
+    install:
+      packages:
+        - podman-compose
+        - podman-tui
+        - podman-machine
+        - podmansh

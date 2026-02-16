@@ -1,0 +1,16 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+modules:
+  - type: dnf
+    install:
+      packages:
+        - cockpit-system
+        - cockpit-bridge
+        - cockpit-machines
+        - cockpit-podman
+        - cockpit-ostree
+        - cockpit-networkmanager
+        - cockpit-selinux
+        - cockpit-storaged
+        - cockpit-kdump
+        - cockpit-files

@@ -11,7 +11,7 @@ image-version: stable
 
 # module configuration, executed in order
 modules:
-  # copy configuration files
+  # copy configuration files (systemd services, tmpfiles, skel configs)
   - type: files
     files:
       - source: system
@@ -20,11 +20,12 @@ modules:
   # install dev fonts
   - from-file: fonts.yml
 
-  # install common packages
-  - from-file: common.yml
+  # install common packages (from fonts.yml includes fonts and other shared packages)
+  # Note: 1password moved to security/1password.yml
 
-  # install and setup dev tools
-  - from-file: dx.yml
+  # install developer experience (AMD/Main variant - includes LM Studio with AMD GPU support)
+  - from-file: dx-amd.yml
+  # For NVIDIA variant, use: from-file: dx.yml (without AMD-specific AI modules)
 
   # this sets up the proper policy & signing files for signed images to work fully
   - type: signing

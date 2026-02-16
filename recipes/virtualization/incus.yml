@@ -1,0 +1,11 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+# Incus is a modern fork of LXD for container and VM management
+# Note: incus-admin group is handled by the groups module (system/groups.yml)
+modules:
+  - type: dnf
+    install:
+      packages:
+        - incus
+        - incus-agent
+        - lxc

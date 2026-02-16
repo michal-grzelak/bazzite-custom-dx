@@ -1,0 +1,15 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+modules:
+  # Copy setup-groups script to /usr/libexec/
+  - type: files
+    files:
+      - source: scripts/setup-groups.sh
+        destination: /usr/libexec/dx-groups
+        mode: "0755"
+  
+  # Enable dx-groups service to run on first boot
+  - type: systemd
+    system:
+      enabled:
+        - dx-groups.service

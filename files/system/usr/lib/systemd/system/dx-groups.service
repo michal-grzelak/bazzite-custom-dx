@@ -1,5 +1,5 @@
 [Unit]
-Description=Add wheel members to docker etc
+Description=Add wheel members to docker, libvirt, and incus-admin groups
 
 [Service]
 Type=oneshot

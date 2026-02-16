@@ -1,0 +1,20 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+# Development flatpaks - system-wide installations
+modules:
+  - type: default-flatpaks
+    configurations:
+      # User flatpaks (optional, users can add more)
+      - scope: user
+        repo:
+          title: Flathub (user)
+      # System flatpaks - available to all users
+      - notify: true
+        scope: system
+        repo:
+          title: Flathub (system)
+        install:
+          # DevPod - cloud development environments
+          - sh.loft.devpod
+          # Gear Lever - AppImage management GUI
+          - it.mijorus.gearlever

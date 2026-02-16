@@ -2,7 +2,10 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
   - type: brew
-    nofile-limits: true # increase nofile limits
-    brew-analytics: false # disable telemetry
+    nofile-limits: true
+    brew-analytics: false
     update-interval: 1d
     upgrade-interval: 1d
+    install:
+      # Mise - version manager (runs after brew setup)
+      - mise

@@ -1,25 +1,51 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+# DX Orchestrator - GPU-agnostic developer experience modules
+# This module includes all DX tools that work on any GPU
+# 
+# Module order matters - networking must come first (IP forwarding)
 modules:
-  # preconfigure before install
-  - type: script
-    scripts:
-      - preconfigure-dx.sh
-
-  # install all common modules
-  - from-file: dx/common.yml
-
-  # install all cockpit modules
-  - from-file: dx/cockpit.yml
-
-  # install all docker modules
-  - from-file: dx/docker.yml
-
-  # install all qemu modules
-  - from-file: dx/qemu.yml
-
-  # install brew
-  - from-file: dx/brew.yml
-
-  # setup services
-  - from-file: dx/system-services.yml
+  # System: Networking (IP forwarding, iptables) - must run first
+  - from-file: system/networking.yml
+  
+  # System: Group management (docker, libvirt, incus-admin)
+  - from-file: system/groups.yml
+  
+  # System: Cockpit web UI
+  - from-file: system/cockpit.yml
+  
+  # Dev: Homebrew + Mise
+  - from-file: dev/brew.yml
+  
+  # Dev: VSCode + DevContainer CLI
+  - from-file: dev/vscode.yml
+  
+  # Dev: Docker CE (requires networking.yml first)
+  - from-file: dev/docker.yml
+  
+  # Dev: Podman extensions (base podman is in Bazzite)
+  - from-file: dev/podman.yml
+  
+  # Virtualization: QEMU
+  - from-file: virtualization/qemu.yml
+  
+  # Virtualization: libvirt + tools
+  - from-file: virtualization/libvirt.yml
+  
+  # Virtualization: Incus
+  - from-file: virtualization/incus.yml
+  
+  # Security: 1Password
+  - from-file: security/1password.yml
+  
+  # AI: LM Studio (GPU-agnostic base)
+  - from-file: ai/lmstudio.yml
+  
+  # Dotfiles: Chezmoi skeleton
+  - from-file: dotfiles/chezmoi.yml
+  
+  # System: Service enables
+  - from-file: system/services.yml
+  
+  # Flatpaks: Dev tools
+  - from-file: flatpaks/dev.yml

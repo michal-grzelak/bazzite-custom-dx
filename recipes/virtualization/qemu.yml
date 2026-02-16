@@ -1,0 +1,16 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+# Full QEMU package set based on Aurora DX
+modules:
+  - type: dnf
+    install:
+      packages:
+        - qemu
+        - qemu-img
+        - qemu-system-x86-core
+        - qemu-device-display-virtio-gpu
+        - qemu-device-display-virtio-vga
+        - qemu-user-binfmt
+        - qemu-user-static
+        - qemu-char-spice
+        - qemu-device-usb-redirect

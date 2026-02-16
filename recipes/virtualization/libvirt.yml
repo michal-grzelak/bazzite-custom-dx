@@ -1,0 +1,26 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+modules:
+  - type: dnf
+    repos:
+      copr:
+        - name: karmab/kcli
+        - name: gmaglione/podman-bootc
+    install:
+      packages:
+        - libvirt
+        - libvirt-nss
+        - virt-manager
+        - virt-viewer
+        - virt-install
+        - virt-v2v
+        - edk2-ovmf
+        # COPR packages
+        - kcli
+        - podman-bootc
+  
+  # Create libvirt-workaround.service for SELinux relabeling
+  - type: files
+    files:
+      - source: system/usr/lib/systemd/system/libvirt-workaround.service
+        destination: /usr/lib/systemd/system/libvirt-workaround.service

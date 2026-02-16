@@ -1,0 +1,14 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+# Chezmoi dotfiles manager
+# Provides configuration template - user creates their own dotfiles repository
+modules:
+  - type: brew
+    install:
+      - chezmoi
+  
+  # Copy chezmoi config template to /etc/skel for new users
+  - type: files
+    files:
+      - source: system/etc/skel/.config/chezmoi/chezmoi.toml
+        destination: /etc/skel/.config/chezmoi/chezmoi.toml

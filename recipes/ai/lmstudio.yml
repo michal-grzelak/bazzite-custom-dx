@@ -1,0 +1,9 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+# LM Studio - Local LLM development and inference
+# TEMPORARY OVERRIDE: AppImage-based installation (no RPM available)
+# May change if LM Studio provides official RPM packages
+modules:
+  - type: script
+    scripts:
+      - install-lmstudio.sh
