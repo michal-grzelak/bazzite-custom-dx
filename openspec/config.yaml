@@ -1,0 +1,19 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Fedora based custom OS images built with blue-build
+  Schema: We follow the blue-build module schema for defining our modules and recipes:
+    - Base recipe: $schema=https://schema.blue-build.org/recipe-v1.json
+    - Modules: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+  Conventions: We use blue-build's module system to define our image build process. Each module is defined in a YAML file and can be reused across different recipes.
+  Docs: Use schema to reference all documentation. Schema contains all required information about the structure and conventions of the files.
+  Official blue-build documentation: https://blue-build.org/learn/getting-started/.
+  Domain: Custom system distribution images built with blue-build.
+  We use conventional commits.
+
+rules:
+  proposal:
+  tasks:
+    - Use Given/When/Then format
+    - Break tasks into small, actionable steps
+    - It is preferred to have more clear and specific tasks than fewer, with multiple steps each
