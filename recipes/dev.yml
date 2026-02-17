@@ -19,5 +19,5 @@ modules:
   - from-file: flatpaks/common.yml
   - from-file: flatpaks/dev.yml
 
-  # Dotfiles: Chezmoi skeleton
-  # - from-file: dotfiles/chezmoi.yml
+  # Dotfiles
+  - from-file: dotfiles/chezmoi.yml

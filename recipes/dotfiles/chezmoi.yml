@@ -2,6 +2,17 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
   - type: chezmoi
-    repository: https://github.com/example/dotfiles.git
-    all-users: true
-    disable-init: true
+    repository: https://github.com/michal-grzelak/dotfiles.git
+    all-users: false # should be installed for the current user only
+    disable-init: false
+    disable-update: false
+    wait-after-boot: "5m"
+    run-every: "1d"
+    file-conflict-policy: replace
+
+  # Enable chezmoi systemd services for initialization and periodic updates
+  - type: systemd
+    user:
+      enabled:
+        - chezmoi-init.service
+        - chezmoi-update.timer
