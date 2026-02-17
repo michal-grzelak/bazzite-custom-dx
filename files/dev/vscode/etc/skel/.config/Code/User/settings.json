@@ -1,9 +1,0 @@
-{
-  "window.titleBarStyle": "custom",
-  "editor.fontFamily": "'JetBrains Mono', 'FiraCode Nerd Font', 'Hack', monospace",
-  "update.mode": "none",
-  "update.showReleaseNotes": true,
-  "telemetry.telemetryLevel": "off",
-  "extensions.autoUpdate": false,
-  "extensions.autoCheckUpdates": true
-}
