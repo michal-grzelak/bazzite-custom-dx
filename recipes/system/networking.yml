@@ -4,5 +4,5 @@ modules:
   # Load iptable_nat module for docker-in-docker scenarios
   - type: files
     files:
-      - source: etc/modules-load.d/ip_tables.conf
-        destination: /etc/modules-load.d/ip_tables.conf
+      - source: dev/networking/
+        destination: /

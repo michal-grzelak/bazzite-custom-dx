@@ -1,0 +1,23 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+
+modules:
+  - from-file: system/networking.yml
+  - from-file: system/cockpit.yml
+
+  - from-file: dev/brew.yml
+  - from-file: dev/vscode.yml
+  - from-file: dev/docker.yml
+  - from-file: dev/podman.yml
+
+  - from-file: virtualization/qemu.yml
+  - from-file: virtualization/libvirt.yml
+  - from-file: virtualization/incus.yml
+
+  - from-file: security/1password.yml
+
+  - from-file: flatpaks/common.yml
+  - from-file: flatpaks/dev.yml
+
+  # Dotfiles: Chezmoi skeleton
+  # - from-file: dotfiles/chezmoi.yml

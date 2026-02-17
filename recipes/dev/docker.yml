@@ -14,12 +14,11 @@ modules:
         - docker-compose-plugin
         - docker-model-plugin
 
-  # Copy docker group setup script
+  # Copy docker configuration files
   - type: files
     files:
-      - source: usr/libexec/dx-docker-groups
-        destination: /usr/libexec/dx-docker-groups
-        mode: "0755"
+      - source: dev/docker/
+        destination: /
 
   # Enable docker socket and group service
   - type: systemd

@@ -1,10 +1,10 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
-# DX Orchestrator for AMD/Intel GPUs
-# Includes all GPU-agnostic modules + AMD-specific AI support
+
+# Includes AMD-specific support
 modules:
-  # All GPU-agnostic DX modules
-  - from-file: dx.yml
-  
+  # All GPU-agnostic DEV modules
+  - from-file: dev.yml
+
   # AI: OpenCL BLAS for AMD/Intel GPU acceleration
   - from-file: ai/clblast.yml

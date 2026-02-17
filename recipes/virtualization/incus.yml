@@ -9,15 +9,15 @@ modules:
         - incus-agent
         - lxc
 
-  # Copy incus-admin group setup script
+  # Copy incus configuration files
   - type: files
     files:
-      - source: usr/libexec/dx-incus-groups
-        destination: /usr/libexec/dx-incus-groups
-        mode: "0755"
+      - source: dev/incus/
+        destination: /
 
   # Enable incus group service
   - type: systemd
     system:
       enabled:
         - dx-incus-groups.service
+        - incus-workaround.service

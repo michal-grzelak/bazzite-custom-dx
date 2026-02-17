@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Incus-admin group setup - adds wheel members to incus-admin group
+# Libvirt group setup - adds wheel members to libvirt group
 
 VERSION="1"
-GROUP_NAME="incus-admin"
-STATE_FILE="/etc/ublue/dx-incus-groups"
+GROUP_NAME="libvirt"
+STATE_FILE="/etc/custom-state-files/dx-libvirt-groups"
 
 # Check if already ran with same version
 if [[ -f "$STATE_FILE" ]] && [[ "$(cat "$STATE_FILE")" == "$VERSION" ]]; then
@@ -18,26 +18,19 @@ echo "Running $GROUP_NAME group setup..."
 add_to_group() {
     local user="$1"
     local group="$2"
-    
+
     if id -nG "$user" | grep -qw "$group"; then
         echo "User $user is already in group $group"
         return
     fi
-    
-    # Check if group exists in /usr/lib/group (Atomic standard)
-    if grep -q "^${group}:" /usr/lib/group 2>/dev/null; then
-        usermod -aG "$group" "$user" 2>/dev/null || echo "Warning: Could not add $user to $group"
-    else
-        # Fallback - try direct add
-        groupadd "$group" 2>/dev/null || true
-        usermod -aG "$group" "$user" 2>/dev/null || echo "Warning: Could not add $user to $group"
-    fi
+
+    usermod -aG "$group" "$user" 2>/dev/null || echo "Warning: Could not add $user to $group"
 }
 
 # Get all wheel users
 wheel_users=$(getent group wheel | cut -d ":" -f 4 | tr ',' '\n')
 
-# Add wheel users to incus-admin group
+# Add wheel users to libvirt group
 for user in $wheel_users; do
     echo "Adding user $user to $GROUP_NAME group..."
     add_to_group "$user" "$GROUP_NAME"

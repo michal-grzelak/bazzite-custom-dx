@@ -9,3 +9,9 @@ modules:
     install:
       packages:
         - code
+
+  # Copy VSCode configuration files
+  - type: files
+    files:
+      - source: dev/vscode/
+        destination: /

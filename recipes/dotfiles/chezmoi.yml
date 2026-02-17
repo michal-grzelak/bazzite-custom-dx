@@ -5,9 +5,3 @@ modules:
     repository: https://github.com/example/dotfiles.git
     all-users: true
     disable-init: true
-
-  # Copy chezmoi skel configuration
-  - type: files
-    files:
-      - source: system/etc/skel/.config/chezmoi/chezmoi.toml
-        destination: /etc/skel/.config/chezmoi/chezmoi.toml

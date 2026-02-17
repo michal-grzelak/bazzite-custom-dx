@@ -5,9 +5,9 @@ modules:
     repos:
       copr:
         - name: karmab/kcli
-          chroot: fedora-%OS_VERSION%-x86_64
+          chroot: fedora-43-x86_64
         - name: gmaglione/podman-bootc
-          chroot: fedora-%OS_VERSION%-x86_64
+          chroot: fedora-43-x86_64
     install:
       packages:
         - libvirt
@@ -21,18 +21,11 @@ modules:
         - kcli
         - podman-bootc
 
-  # Create libvirt-workaround.service for SELinux relabeling
+  # Copy libvirt configuration files
   - type: files
     files:
-      - source: usr/lib/tmpfiles.d/libvirt-workaround.conf
-        destination: /usr/lib/tmpfiles.d/libvirt-workaround.conf
-
-  # Copy libvirt group setup script
-  - type: files
-    files:
-      - source: usr/libexec/dx-libvirt-groups
-        destination: /usr/libexec/dx-libvirt-groups
-        mode: "0755"
+      - source: dev/libvirt/
+        destination: /
 
   # Enable libvirt services
   - type: systemd
@@ -40,3 +33,4 @@ modules:
       enabled:
         - dx-libvirt-groups.service
         - libvirt-workaround.service
+        - swtpm-workaround.service
