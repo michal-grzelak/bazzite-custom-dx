@@ -1,6 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
-  - from-file: system/common.yml
-
-  - from-file: system/fonts.yml
+  #  automatically update changes to dconf
+  - type: bling
+    install:
+      - dconf-update-service

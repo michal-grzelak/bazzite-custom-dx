@@ -17,5 +17,8 @@ modules:
   # install developer experience (AMD variant)
   - from-file: dev-amd.yml
 
+  # regenerate initramfs
+  - type: initramfs
+
   # this sets up the proper policy & signing files for signed images to work fully
   - type: signing
