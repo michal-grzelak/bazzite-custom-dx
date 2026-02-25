@@ -1,11 +1,11 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
-  # Install VSCode from Microsoft repository
+  # Brave browser
   - type: dnf
     repos:
       files:
-        - vscode.repo
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
     install:
       packages:
-        - code
+        - brave-browser

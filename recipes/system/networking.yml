@@ -1,8 +1,0 @@
----
-# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
-modules:
-  # Load iptable_nat module for docker-in-docker scenarios
-  - type: files
-    files:
-      - source: dev/networking/
-        destination: /

@@ -1,0 +1,18 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+modules:
+  - type: default-flatpaks
+    configurations:
+      - notify: false
+        scope: user
+        repo:
+          title: Flathub (system)
+        install:
+          # Gear Lever - AppImage management GUI
+          - it.mijorus.gearlever
+          # Flatseal - Flatpak permissions manager
+          - com.github.tchx84.Flatseal
+          # Warehouse - Flatpak manager
+          - io.github.flattool.Warehouse
+          # Ignition - Manage startup apps and scripts
+          - io.github.flattool.Ignition

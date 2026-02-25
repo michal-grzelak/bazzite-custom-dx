@@ -4,3 +4,11 @@ modules:
   - from-file: system/common.yml
 
   - from-file: system/fonts.yml
+
+  - from-file: apps/common.yml
+
+  - from-file: apps/gpu.yml
+
+  - from-file: apps/1password.yml
+
+  - from-file: apps/browser.yml

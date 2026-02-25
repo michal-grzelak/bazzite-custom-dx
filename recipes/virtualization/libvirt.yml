@@ -2,12 +2,6 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
   - type: dnf
-    repos:
-      copr:
-        - name: karmab/kcli
-          chroot: fedora-43-x86_64
-        - name: gmaglione/podman-bootc
-          chroot: fedora-43-x86_64
     install:
       packages:
         - libvirt
@@ -17,20 +11,18 @@ modules:
         - virt-install
         - virt-v2v
         - edk2-ovmf
-        # COPR packages
-        - kcli
-        - podman-bootc
-
-  # Copy libvirt configuration files
-  - type: files
-    files:
-      - source: dev/libvirt/
-        destination: /
 
   # Enable libvirt services
+  - type: dnf
+    repos:
+      copr:
+        - name: ublue-os/packages
+          chroot: fedora-43-x86_64
+    install:
+      packages:
+        - ublue-os-libvirt-workarounds
+
   - type: systemd
     system:
       enabled:
-        - dx-libvirt-groups.service
-        - libvirt-workaround.service
-        - swtpm-workaround.service
+        - ublue-os-libvirt-workarounds.service

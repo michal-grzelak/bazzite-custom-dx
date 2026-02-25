@@ -8,7 +8,7 @@ modules:
     disable-update: false
     wait-after-boot: "5m"
     run-every: "1d"
-    file-conflict-policy: replace
+    file-conflict-policy: skip
 
   # Enable chezmoi systemd services for initialization and periodic updates
   - type: systemd

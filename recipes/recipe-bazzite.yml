@@ -6,16 +6,27 @@ name: bazzite
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite
+base-image: ghcr.io/ublue-os/bazzite-dx
 image-version: stable
 
 # module configuration, executed in order
 modules:
-  # install common modules
+  # install common modules (system config, fonts)
   - from-file: common.yml
 
-  # install developer experience (AMD variant)
-  - from-file: dev-amd.yml
+  # dev packages
+  - from-file: dev/brew.yml
+
+  # virtualization packages
+  - from-file: virtualization/libvirt.yml
+  - from-file: virtualization/qemu.yml
+  - from-file: system/cockpit.yml
+
+  # AI packages
+  - from-file: ai-amd.yml
+
+  # install dotfiles
+  - from-file: dotfiles/chezmoi.yml
 
   # regenerate initramfs
   - type: initramfs
