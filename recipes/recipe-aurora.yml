@@ -1,0 +1,30 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: aurora
+# description will be included in the image's metadata
+description: Personalized Aurora-DX image.
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/aurora-dx
+image-version: stable
+
+# module configuration, executed in order
+modules:
+  # install common modules (system config, fonts)
+  - from-file: common.yml
+
+  # dev packages
+  - from-file: dev/brew.yml
+
+  # AI packages
+  - from-file: ai-amd.yml
+
+  # install dotfiles
+  - from-file: dotfiles/chezmoi.yml
+
+  # regenerate initramfs
+  - type: initramfs
+
+  # this sets up the proper policy & signing files for signed images to work fully
+  - type: signing
