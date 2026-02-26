@@ -16,3 +16,5 @@ modules:
           - io.github.flattool.Warehouse
           # Ignition - Manage startup apps and scripts
           - io.github.flattool.Ignition
+          # DistroShelf
+          - com.ranfdev.DistroShelf

@@ -14,6 +14,9 @@ modules:
   # install common modules (system config, fonts)
   - from-file: common.yml
 
+  # gaming packages
+  - from-file: gaming.yml
+
   # dev packages
   - from-file: dev/brew.yml
 

@@ -5,7 +5,9 @@ modules:
 
   - from-file: system/fonts.yml
 
-  - from-file: apps/common.yml
+  - from-file: apps/office.yml
+
+  - from-file: apps/management.yml
 
   - from-file: apps/gpu.yml
 

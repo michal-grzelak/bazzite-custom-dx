@@ -1,0 +1,24 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+modules:
+  - type: default-flatpaks
+    configurations:
+      - notify: false
+        scope: user
+        repo:
+          title: Flathub (system)
+        install:
+          # ManguHud - Vulkan/OpenGL performance overlay
+          - org.freedesktop.Platform.VulkanLayer.MangoHud
+          # OBS VkCapture - Vulkan frame capture layer for OBS Studio
+          - apps/org.freedesktop.Platform.VulkanLayer.OBSVkCapture
+          # gamescope - Steam's gamescope layer
+          - org.freedesktop.Platform.VulkanLayer.gamescope
+
+          # ProtonUp-Qt - GUI for managing Proton versions
+          - net.davidotek.pupgui2
+          # Proton-GE - Custom Proton compatibility tool for Steam
+          - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+
+          # Ludusavi - Game save manager
+          - com.github.mtkennerly.ludusavi
