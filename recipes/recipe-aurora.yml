@@ -17,9 +17,6 @@ modules:
   # install dotfiles
   - from-file: dotfiles/chezmoi.yml
 
-  # AI packages
-  - from-file: ai-amd.yml
-
   # gaming packages
   - from-file: gaming.yml
 
