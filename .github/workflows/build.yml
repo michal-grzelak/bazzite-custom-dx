@@ -41,8 +41,5 @@ jobs:
           # enabled by default, disable if your image is small and you want faster builds
           maximize_build_space: true
 
-          # rechunks the image, allowing for smaller images and smaller updates; increases build time
-          build_chunked_oci: true
-
           # make use of layer cache by pushing the layers to the registry.
           use_cache: true
