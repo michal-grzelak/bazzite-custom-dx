@@ -5,12 +5,12 @@ modules:
 
   - from-file: system/fonts.yml
 
-  - from-file: apps/office.yml
-
-  - from-file: apps/management.yml
-
-  - from-file: apps/gpu.yml
+  - from-file: apps/browser.yml
 
   - from-file: apps/passwords-and-safety.yml
 
-  - from-file: apps/browser.yml
+  - from-file: apps/office.yml
+
+  - from-file: apps/gpu.yml
+
+  - from-file: apps/management.yml

@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
-# rocm for fedora
+# rocm for fedora - it seems ublue doesn't ship all rocm packages
 modules:
   - type: dnf
     install:

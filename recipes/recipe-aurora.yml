@@ -11,20 +11,20 @@ image-version: stable
 
 # module configuration, executed in order
 modules:
-  # install common modules (system config, fonts)
-  - from-file: common.yml
-
-  # gaming packages
-  - from-file: gaming.yml
-
   # dev packages
   - from-file: dev/brew.yml
+
+  # install dotfiles
+  - from-file: dotfiles/chezmoi.yml
 
   # AI packages
   - from-file: ai-amd.yml
 
-  # install dotfiles
-  - from-file: dotfiles/chezmoi.yml
+  # gaming packages
+  - from-file: gaming.yml
+
+  # install common modules (system config, fonts)
+  - from-file: common.yml
 
   # regenerate initramfs
   - type: initramfs
