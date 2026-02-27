@@ -11,7 +11,7 @@ modules:
           # ManguHud - Vulkan/OpenGL performance overlay
           - org.freedesktop.Platform.VulkanLayer.MangoHud
           # OBS VkCapture - Vulkan frame capture layer for OBS Studio
-          - apps/org.freedesktop.Platform.VulkanLayer.OBSVkCapture
+          - org.freedesktop.Platform.VulkanLayer.OBSVkCapture
           # gamescope - Steam's gamescope layer
           - org.freedesktop.Platform.VulkanLayer.gamescope
 
