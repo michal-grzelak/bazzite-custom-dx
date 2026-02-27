@@ -8,7 +8,7 @@ modules:
         repo:
           title: Flathub (system)
         install:
-          # ManguHud - Vulkan/OpenGL performance overlay
+          # MangoHud - Vulkan/OpenGL performance overlay
           - org.freedesktop.Platform.VulkanLayer.MangoHud
           # OBS VkCapture - Vulkan frame capture layer for OBS Studio
           - org.freedesktop.Platform.VulkanLayer.OBSVkCapture

@@ -11,6 +11,6 @@ modules:
 
   - from-file: apps/gpu.yml
 
-  - from-file: apps/1password.yml
+  - from-file: apps/passwords-and-safety.yml
 
   - from-file: apps/browser.yml
