@@ -11,19 +11,8 @@ image-version: stable
 alt-tags:
   - stable
 
-# module configuration, executed in order
 modules:
-  # dev packages
-  - from-file: dev/brew.yml
-
-  # install dotfiles
-  - from-file: dotfiles/chezmoi.yml
-
-  # gaming packages
-  - from-file: gaming.yml
-
-  # install common modules (system config, fonts)
-  - from-file: common.yml
+  - from-file: base.yml
 
   # regenerate initramfs
   - type: initramfs

@@ -10,11 +10,11 @@ modules:
         install:
           # MangoHud - Vulkan/OpenGL performance overlay
           # ! TODO: doesn't have dynamic latest version, only fixed, install manually; check if later it has some latest tag
-          # - org.freedesktop.Platform.VulkanLayer.MangoHud
+          - org.freedesktop.Platform.VulkanLayer.MangoHud/x86_64/25.08
           # OBS VkCapture - Vulkan frame capture layer for OBS Studio
-          - org.freedesktop.Platform.VulkanLayer.OBSVkCapture
+          - org.freedesktop.Platform.VulkanLayer.OBSVkCapture/x86_64/25.08
           # gamescope - Steam's gamescope layer
-          - org.freedesktop.Platform.VulkanLayer.gamescope
+          - org.freedesktop.Platform.VulkanLayer.gamescope/x86_64/25.08
 
           # ProtonUp-Qt - GUI for managing Proton versions
           - net.davidotek.pupgui2

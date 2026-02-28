@@ -15,6 +15,7 @@ modules:
   # Enable libvirt services
   - type: dnf
     repos:
+      cleanup: true
       copr:
         - name: ublue-os/packages
           chroot: fedora-43-x86_64

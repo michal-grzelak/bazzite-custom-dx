@@ -1,0 +1,11 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+modules:
+  # dev packages
+  - from-file: common/dev-base.yml
+
+  # gaming packages
+  - from-file: common/gaming.yml
+
+  # install common base modules (system config, fonts)
+  - from-file: common/base.yml

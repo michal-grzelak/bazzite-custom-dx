@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
-  - from-file: gaming/launchers.yml
+  - from-file: ../customization/gaming/launchers.yml
 
-  - from-file: gaming/tools.yml
+  - from-file: ../customization/gaming/tools.yml

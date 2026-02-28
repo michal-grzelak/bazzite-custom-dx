@@ -4,6 +4,7 @@ modules:
   # Brave browser
   - type: dnf
     repos:
+      cleanup: true
       files:
         - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
     install:
