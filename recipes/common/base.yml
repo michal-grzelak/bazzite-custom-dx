@@ -1,16 +1,16 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
-  - from-file: ../customization/system/common.yml
+  - from-file: customization/system/common.yml
 
-  - from-file: ../customization/system/fonts.yml
+  - from-file: customization/system/fonts.yml
 
-  - from-file: ../customization/apps/browser.yml
+  - from-file: customization/apps/browser.yml
 
-  - from-file: ../customization/apps/passwords-and-safety.yml
+  - from-file: customization/apps/passwords-and-safety.yml
 
-  - from-file: ../customization/apps/office.yml
+  - from-file: customization/apps/office.yml
 
-  - from-file: ../customization/apps/gpu.yml
+  - from-file: customization/apps/gpu.yml
 
-  - from-file: ../customization/apps/management.yml
+  - from-file: customization/apps/management.yml
