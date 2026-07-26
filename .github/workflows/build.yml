@@ -47,4 +47,4 @@ jobs:
           build_chunked_oci: false
 
           # make use of layer cache by pushing the layers to the registry.
-          use_cache: true
+          use_cache: "true"
